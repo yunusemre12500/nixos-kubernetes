@@ -3,7 +3,7 @@
   networking = {
     dhcpcd.enable = false; # Disabled for stability.
     domain = "internal"; # For easy discovery for nodes using LLMNR protocol.
-    enableIPv6 = false; # IPv6 is not widely adopted and not completly stable.
+    enableIPv6 = false; # IPv6 is not widely adopted and not completely stable.
     firewall = {
       logRefusedConnections = false;
       interfaces.eno1 = {
@@ -28,7 +28,7 @@
         ];
       };
     };
-    interfaces.eno1.mtu = 9000; # If your network devices (firewalls, switches, routers, etc.) does not support Jumbo Frames (MTU > 1500) disable it.
+    interfaces.eno1.mtu = 9000; # If your network devices (firewalls, switches, routers, etc.) does not support Jumbo Frames (MTU > 1500) set to 1500.
     nameservers =
       [
         "1.1.1.2"
