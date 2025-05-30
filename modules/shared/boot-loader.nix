@@ -2,14 +2,14 @@
 {
   boot = {
     crashDump.enable = true; # Enabled for debugging and emergency purposes.
-    enableContainers = false; # You don't need NixOS containers on Kubernetes.
+    enableContainers = false; # You don't need NixOS containers on Kubernetes Nodes.
     initrd = {
       network.enable = true;
       systemd = {
         enable = true;
         network = {
           enable = true;
-          wait-online.enable = false; # Typiclly servers use static IP addresses and wait-online service is useless.
+          wait-online.enable = false; # Typiclly, servers use static IP addresses and wait-online service is useless.
         };
       };
     };
@@ -17,6 +17,7 @@
       # This system uses systemd-boot and UEFI.
       efi.canTouchEfiVariables = true;
       systemd-boot = {
+        # Servers don't need too much generations.
         configurationLimit = 5;
         editor = false;
         enable = true;
