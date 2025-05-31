@@ -9,6 +9,11 @@
     ./networking.nix
   ];
 
+  console = {
+    earlySetup = true;
+    keyMap = "trq";
+  };
+
   environment.systemPackages = with pkgs; [
     containerd
     cni-plugins
