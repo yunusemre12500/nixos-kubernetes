@@ -10,7 +10,6 @@
       '';
       Restart = "always";
       RestartSec = 5;
-      WatchDog = "10";
     };
     wantedBy = [ "muti-user.target" ];
   };
